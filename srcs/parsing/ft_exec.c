@@ -6,7 +6,7 @@
 /*   By: dboyer <dboyer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/12 11:00:05 by dboyer            #+#    #+#             */
-/*   Updated: 2020/10/29 12:01:47 by dboyer           ###   ########.fr       */
+/*   Updated: 2020/10/30 16:39:03 by dboyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ static	void	exec(t_shell *shell, t_command *cmd, char ***envp, char ***argv)
 		{
 			command_not_found(shell, cmd);
 			clean_env_argv(envp, argv);
-			exit(EXIT_FAILURE);
+			exit(127);
 		}
-		exit(EXIT_SUCCESS);
+		exit(126);
 	}
 	else if (shell->pid > 0)
 	{
